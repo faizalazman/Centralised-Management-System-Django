@@ -1,6 +1,7 @@
 # Centralized Management System Django
 
 This is a centralized file and document management system built with Django developed for my company, Lembaga Air Perak.
+**DISCLAIMERS : NO REAL DATA OR FILE NAME ARE BEING USED, EVERTYHING IS RANDOMLY GENERATED**
 
 ## Problem Statements
 ### Management
