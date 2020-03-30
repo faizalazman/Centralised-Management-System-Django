@@ -24,7 +24,7 @@ This is a centralized file and document management system built with Django deve
 ### Dashboard ( Where you can see what up with your files )
 ![alt text](https://github.com/faizalazman/Centralised-Management-System-Django/blob/master/screenshots/Dashboard.jpg)
 ### Edit File Details
-![alt text](https://github.com/faizalazman/Centralised-Management-System-Django/blob/master/screenshots/Dashboard.jpg)
+![alt text](https://github.com/faizalazman/Centralised-Management-System-Django/blob/master/screenshots/edit.jpg)
 
 
 ## Contributing
