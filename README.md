@@ -19,6 +19,8 @@ This is a centralized file and document management system built with Django deve
 - **TODO** - Extend the same system to allow report to being kept electronically and downloaded/printed by the user.
 
 ## How does the system looks ?
+### Login Page
+![alt text](https://github.com/faizalazman/Centralised-Management-System-Django/blob/master/screenshots/login.jpg)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
