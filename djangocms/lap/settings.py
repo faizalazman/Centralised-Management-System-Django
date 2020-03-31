@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 INSTALLED_APPS = [
     'import_export',
     'file.apps.FileConfig',
+    'pages.apps.PagesConfig',
     'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',

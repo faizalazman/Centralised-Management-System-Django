@@ -38,3 +38,4 @@ class File(models.Model):
 
     class Meta:
         ordering = ['-overdue','id','department', '-checkout_on']
+        permissions = [("can_login", 'can login')]

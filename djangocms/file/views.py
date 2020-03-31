@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,permission_required
 from .forms import FileForm,AddForm
 from .models import File
 
 @login_required
+@permission_required('file.can_login')
 def dashboard(request):
     files = File.objects.order_by('-overdue')
     context = {
