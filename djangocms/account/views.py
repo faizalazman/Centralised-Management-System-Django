@@ -30,6 +30,7 @@ def register(request):
         return render(request, 'account/register.html')
 
 def login(request):
+    """ Handles login and sort them into group, which will be pushed into different views """
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -39,7 +40,10 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, 'Anda telah berjaya log masuk.')
-            return redirect('dashboard')
+            if user.groups.filter(name='Pentadbiran'):
+                return redirect('dashboard')
+            else: 
+                return redirect('makmal')
         else:
             messages.error(request, 'Email / Nama pengguna yang tidak tepat.')
             return redirect('login')

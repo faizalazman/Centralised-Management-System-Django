@@ -25,7 +25,7 @@ SECRET_KEY = '@q3!wg^cgzl@&_o(b+^b)a1q60431iu2+i9*7o#w@p)aqe@s%*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -33,9 +33,11 @@ ALLOWED_HOSTS = ['127.0.0.1']
 INSTALLED_APPS = [
     'import_export',
     'file.apps.FileConfig',
+    'makmal.apps.MakmalConfig',
     'pages.apps.PagesConfig',
     'account.apps.AccountConfig',
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

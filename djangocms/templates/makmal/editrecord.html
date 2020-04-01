@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Lembaga Air Perak - Tambah Data</title>
+    <title>Lembaga Air Perak - Ubah Rekod</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&amp;display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{% url 'dashboard' %}"><img alt="" src="{% static 'assets/img/logo.png' %}"> <span class="navbar-brand-name">LEMBAGA AIR PERAK - BAHAGIAN PENTADBIRAN</span></a>
+                <a class="navbar-brand" href="{% url 'makmal' %}"><img alt="" src="{% static 'assets/img/logo.png' %}"> <span class="navbar-brand-name">LEMBAGA AIR PERAK - BAHAGIAN MAKMAL</span></a>
             </div>
 
             <ul class="navbar-item flex-row mr-auto">
@@ -86,7 +86,7 @@
             <ul class="list-unstyled menu-categories" id="topAccordion">
 
                 <li class="menu single-menu" class=>
-                    <a href="{% url 'dashboard' %}">
+                    <a href="{% url 'makmal' %}">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                             <span>Home</span>
@@ -95,8 +95,8 @@
                 </li>
 
 
-                <li class="menu single-menu active">
-                    <a href="{% url 'addfile' %}">
+                <li class="menu single-menu">
+                    <a href="{% url 'addreport' %}">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                             <span>Tambah File Baru</span>
@@ -108,58 +108,78 @@
     </div>
     <!--  END TOPBAR  -->
 
+
     <!--  BEGIN CONTENT AREA  -->
     <div id="content" class="main-content layout-px-spacing">
-            <div class="form-content layout-top-spacing layout-spacing">
-                <div class="row">
-                    <div id="flFormsGrid" class="col-lg-12 layout-spacing">
-                        <div class="statbox widget box box-shadow">
-                            <div class="widget-header">
+        <div class="form-content layout-top-spacing layout-spacing">
+            <div class="row">
+                <div id="flFormsGrid" class="col-lg-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Ubah Data ?</h4>
+                                </div>                                                                        
+                            </div>
+                        </div>
+                        <div class="widget-content widget-content-area">
+                            <form method="POST" >{% csrf_token %}
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Nama Projek</label>
+                                        {{ form.project_name }}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Nama Pemaju</label>
+                                        {{ form.contractor_name }}
+                                    </div>
+                                </div>
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">Jenis Paip</label>
+                                        {{ form.pipe_type }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">Saiz Paip</label>
+                                        {{ form.pipe_size }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="assigned_to">Dilakukan Pada</label>
+                                        {{ form.done_on }}
+                                    </div>
+                                </div>
+                                <hr />
+
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>Tambah Data ?</h4>
+                                        <h6>Rekod Keputusan Penyucian Hama</h6>
                                     </div>                                                                        
                                 </div>
-                            </div>
-                            <div class="widget-content widget-content-area">
-                                <form method="POST" >{% csrf_token %}
-                                    <div class="form-row mb-4">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Nama File</label>
-                                            {{ form.file_name }}
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">Nombor File</label>
-                                            {{ form.file_number }}
-                                        </div>
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-3">
+                                        <label for="result_1">Keputusan 1</label>
+                                        {{ form.result_1 }}
                                     </div>
-                                    <div class="form-group mb-4">
-                                        <label for="inputState">Bahagian</label>
-                                        {{ form.department }}
+                                    <div class="form-group col-md-3">
+                                        <label for="result_2">Keputusan 2</label>
+                                        {{ form.result_2 }}
                                     </div>
-                                    <div class="form-row mb-4">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputState">Dipertanggungjawab Kepada</label>
-                                            {{ form.assigned_to }}
-                                        </div>
-                                         <div class="form-group col-md-6">
-                                            <label for="assigned_to">Dikeluarkan Pada</label>
-                                            {{ form.checkout_on }}
-                                        </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="result_3">Keputusan 3</label>
+                                        {{ form.result_3 }}
                                     </div>
-                                    <div class="form-row mb-0">
-                                        <div class="custom-control custom-checkbox checkbox-info">
-                                            {{ form.returned }}
-                                            <label  for="gridCheck">Telah Dipulangkan ?</label>
-                                        </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="result_4">Keputusan 4</label>
+                                        {{ form.result_4 }}
                                     </div>
-                                    <button type="submit" class="btn btn-primary mt-3">Tambah File</button>
-                                </form>
-                            </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-3">Selesai</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <div class="footer-wrapper">
         <div class="footer-section f-section-1">
