@@ -10,6 +10,7 @@ This is a centralized file and document management system built with Django deve
 
 ### Laboratory
 - Lab filing system is hard to sift through and sometimes they might be lost due to being misplaced.
+- Ability to print out report.
 
 ## How this is fixed ?
 **Data can be easily upload/downloaded from the database by the user to various file type such as csv , pdf and html.**
@@ -18,7 +19,8 @@ This is a centralized file and document management system built with Django deve
 - Files status are being presented to the user using a table, which is ordered by their overdue status, which allows the user to take actions.
 
 ### Laboratory
-- **TODO** - Extend the same system to allow report to being kept electronically and downloaded/printed by the user.
+- Extend the same system to allow report to being kept electronically and downloaded/printed by the user.
+- Users are now able to print report 
 
 ## How does the system looks ?
 ### Login Page
