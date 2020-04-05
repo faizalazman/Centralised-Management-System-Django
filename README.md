@@ -3,6 +3,7 @@
 This is a centralized file and document management system built with Django developed for my company, Lembaga Air Perak as a side project.
 
 **DISCLAIMERS : NO REAL DATA OR FILE NAME ARE BEING USED, EVERTYHING IS RANDOMLY GENERATED**
+Live version is [here](https://faizalazman.pythonanywhere.com/)
 
 ## Problem Statements
 ### Management
