@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required,permission_required
 from .forms import FileForm,AddForm
 from .models import File
+from django.contrib import messages
 
 @login_required
 @permission_required('file.can_login')
@@ -20,9 +21,12 @@ def edit_file(request,pk):
         form = FileForm(request.POST,instance = file)
         if form.is_valid():
             form.save()
+            messages.success(request, 'File telah berjaya dikemaskini')
             return redirect('dashboard')
         else:
-            return redirect('editfile')
+            messages.error(request, 'File tidak berjaya dikemaskini')
+            print(form.errors)
+            return redirect('dashboard')
     else:
         form = FileForm(instance = file)
     return render(request, 'management/editfile.html', {'form': form, 'file': file})

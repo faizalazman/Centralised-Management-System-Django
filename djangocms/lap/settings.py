@@ -132,3 +132,8 @@ STATICFILES_DIRS = [
 # Media folder settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+# Autoend Session
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

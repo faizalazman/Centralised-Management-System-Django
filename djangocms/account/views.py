@@ -39,13 +39,12 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            messages.success(request, 'Anda telah berjaya log masuk.')
             if user.groups.filter(name='Pentadbiran'):
                 return redirect('dashboard')
             else: 
                 return redirect('makmal')
         else:
-            messages.error(request, 'Email / Nama pengguna yang tidak tepat.')
+            messages.error(request, 'Nama pengguna/Kata laluan tidak tepat.')
             return redirect('login')
     else:
         return render(request, 'account/login.html')
@@ -54,5 +53,4 @@ def login(request):
 def loguserout(request):
     if request.method == 'POST':
         auth.logout(request)
-        messages.success(request, 'Anda telah di log keluar')
         return redirect('login')

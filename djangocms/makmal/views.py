@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import ReportForm,AddRecordForm
 from .render import Render
 
+
+
 @login_required
 def makmal(request):
     # Obtain all record from database

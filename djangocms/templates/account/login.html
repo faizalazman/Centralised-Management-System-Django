@@ -17,6 +17,7 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="assets/css/forms/switches.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/elements/alert.css">
 </head>
 <body>
    <!--  BEGIN NAVBAR  -->
@@ -60,10 +61,13 @@
 
                 </li>
             </ul>
-        </header>
+        </header>  
     </div>
-    <!--  END NAVBAR  -->    
-
+    <!--  END NAVBAR  -->
+    
+    <div class="container">
+        {% include 'partials/_alerts.html'%}
+    </div>
 
     <div class="form-container outer">
         <div class="form-form">

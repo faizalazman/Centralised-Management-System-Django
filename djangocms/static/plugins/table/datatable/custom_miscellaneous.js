@@ -21,8 +21,8 @@ $(document).ready(function() {
            "sLengthMenu": "Results :  _MENU_",
         },
         "stripeClasses": [],
-        "lengthMenu": [7, 10, 20, 50],
-        "pageLength": 7 
+        "lengthMenu": [8, 10, 20, 50],
+        "pageLength": 8 
     });
 
     multiCheck(cf);

@@ -24,17 +24,35 @@ class File(models.Model):
 
     # If duration > 14 days and returned is False, set overdue to True
     def overdue_status(self):
-        if (timezone.now() - self.checkout_on) > timedelta(days = 14):
-            if self.returned == False:
-                is_overdue = File.objects.get(id = self.id)
-                is_overdue.overdue = True
-                is_overdue.save()
-                return True
+        if self.checkout_on == None:
+            return 'returned'
         else:
-            is_returned = File.objects.get(id = self.id)
-            is_returned.overdue = False
-            is_returned.save()
-            return False
+            if (timezone.now() - self.checkout_on) > timedelta(days = 14):
+                if self.returned == False:
+                    is_overdue = File.objects.get(id = self.id)
+                    is_overdue.overdue = True
+                    is_overdue.save()
+                    return 'overdue'
+                # if has been returned, set overdue false and checkout to None
+                else:
+                    is_overdue = File.objects.get(id = self.id)
+                    is_overdue.overdue = False
+                    is_overdue.checkout_on = None
+                    is_overdue.save()
+                    return 'returned'
+            # if timezone still not overdue
+            else:
+                if self.returned == True:
+                    is_overdue = File.objects.get(id = self.id)
+                    is_overdue.overdue = False
+                    is_overdue.checkout_on = None
+                    is_overdue.save()
+                    return 'returned'
+                else:
+                    is_returned = File.objects.get(id = self.id)
+                    is_returned.overdue = False
+                    is_returned.save()
+                    return 'transit'
 
     class Meta:
         ordering = ['-overdue','id','department', '-checkout_on']

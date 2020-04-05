@@ -14,7 +14,7 @@ class FileForm(forms.ModelForm):
         self.fields['department'].widget.attrs.update({'class' : "form-control"})
         self.fields['assigned_to'].widget.attrs.update({'class' : "form-control tagging select2-hidden-accessible", 'multiple' : 'multiple', 'tabindex':'-1','aria-hidden': 'true','data-select2-id':'10'})
 
-    checkout_on = forms.DateTimeField(widget = forms.DateInput(format='%Y/%m/%d %H:%M' , attrs={ 'id': 'dateTimeFlatpickr',
+    checkout_on = forms.DateTimeField(required = False, widget = forms.DateInput(format='%Y/%m/%d %H:%M' , attrs={ 'id': 'dateTimeFlatpickr',
                                     'class' : "form-control flatpickr flatpickr-input active",
                                     'readonly':'readonly',
                                     'placeholder' : 'Pilih Tarikh...'}))
@@ -34,7 +34,7 @@ class AddForm(forms.ModelForm):
         self.fields['department'].widget.attrs.update({'class' : "form-control"})
         self.fields['assigned_to'].widget.attrs.update({'class' : "form-control tagging select2-hidden-accessible", 'multiple' : 'multiple', 'tabindex':'-1','aria-hidden': 'true','data-select2-id':'10'})
 
-    checkout_on = forms.DateTimeField(widget = forms.DateInput(format='%Y/%m/%d %H:%M' , attrs={ 'id': 'dateTimeFlatpickr',
+    checkout_on = forms.DateTimeField(required = False, widget = forms.DateInput(format='%Y/%m/%d %H:%M' , attrs={ 'id': 'dateTimeFlatpickr',
                                     'class' : "form-control flatpickr flatpickr-input active",
                                     'placeholder' : 'Pilih Tarikh...'}))
 
